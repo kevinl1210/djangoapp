@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Image name: {{ image.imageName }}</h1>
+
+  <p><strong>Image imported date:</strong> {{ image.date }}</p>  
+  <p><strong>Image Genre:</strong> {% for genre in image.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Test</h4>
+  </div>
+{% endblock %}

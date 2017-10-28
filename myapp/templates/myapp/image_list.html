@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Image List</h1>
+
+    {% if image_list %}
+    <ul>
+
+      {% for image in image_list %}
+      <li>
+        <a href="{{ image.get_absolute_url }}">{{ image.imageName }}</a> ({{image.date}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no image in the database.</p>
+    {% endif %}       
+{% endblock %}
