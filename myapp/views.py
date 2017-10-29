@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from .models import Genre, Image
 from django.views import generic
+from .lib.calculation import calc
 
 # Create your views here.
 def index(request):
 	num_of_image = Image.objects.all().count()
 	girl_image = Image.objects.filter(imageName__contains='girl').count()
+
+	girl_image = calc(100)
 
 	num_visits = request.session.get('num_visits', 0)
 	request.session['num_visits'] = num_visits + 1
