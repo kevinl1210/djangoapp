@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Genre, Image
 from django.views import generic
-from .lib.calculation import calc
+from .mylib.calculation import calc
 
 # Create your views here.
 def index(request):
