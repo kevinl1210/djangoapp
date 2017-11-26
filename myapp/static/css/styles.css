@@ -1,5 +1,48 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+.logo {
+	/*text-align: center;*/
+	margin-top: 32px;
+	margin-bottom: 80px;
+	/*height: 70px;*/
+	background-color: transparent;
+}
+
+.nav-li {
+	text-align: center;
+}
+
+header, main, footer {
+  padding-left: 200px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+ul.side-nav.fixed li.logo a:hover, ul.side-nav.fixed li.logo a.active {
+   background-color: #ffe0b2;
+}
+
+.home-logo {
+	height: 100px;
+	width: 100px;
+	border:1px solid #ffffff;
+}
+
+body {
+ 	display: flex;
+ 	min-height: 100vh;
+ 	flex-direction: column;
+}
+main {
+ 	flex: 1 0 auto;
+}
+
+.contact {
+    text-align: center;
 }
