@@ -16,6 +16,17 @@ def index(request):
 	return render(request, 'index.html', 
 		context={'num_of_image':num_of_image, 'girl_image':girl_image, 'num_visits':num_visits},)
 
+def about(request):
+	return render(request, 'about.html')
+
+
+def classifier(request):
+	return render(request, 'classifier.html')
+
+def notes(request):
+	return render(request, 'notes.html')
+
+
 class ImageListView(generic.ListView):
 	model = Image
 	paginate_by = 10
