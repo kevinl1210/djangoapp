@@ -1,30 +1,30 @@
 from django.shortcuts import render
 from .models import Genre, Image
 from django.views import generic
-from .mylib.calculation import calc
+# from .mylib.calculation import calc
 
 # Create your views here.
 def index(request):
-	num_of_image = Image.objects.all().count()
-	girl_image = Image.objects.filter(imageName__contains='girl').count()
-
-	girl_image = calc(100)
-
-	num_visits = request.session.get('num_visits', 0)
-	request.session['num_visits'] = num_visits + 1
-
+	# num_of_image = Image.objects.all().count()
+	# girl_image = Image.objects.filter(imageName__contains='girl').count()
+	request.session['num_visits'] += 1
 	return render(request, 'index.html', 
-		context={'num_of_image':num_of_image, 'girl_image':girl_image, 'num_visits':num_visits},)
+		context={'num_visits':request.session['num_visits']},)
+
 
 def about(request):
-	return render(request, 'about.html')
+	return render(request, 'about.html',
+		context={'num_visits':request.session['num_visits']},)
 
 
 def classifier(request):
-	return render(request, 'classifier.html')
+	return render(request, 'classifier.html',
+		context={'num_visits':request.session['num_visits']},)
+
 
 def notes(request):
-	return render(request, 'notes.html')
+	return render(request, 'notes.html',
+		context={'num_visits':request.session['num_visits']},)
 
 
 class ImageListView(generic.ListView):

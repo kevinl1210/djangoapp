@@ -2,12 +2,7 @@
 
 {% block content %}
 {% load static %}
-<!-- img src="{% static 'img/frog.png' %}" alt="My image" style="width:355px;height:340px;"/-->
-
 <!--
-<h1>Image classifier home</h1>
-
-  <p>Welcome to <em>Image Classifier</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
 
 <h2>Dynamic content</h2>
 
@@ -18,10 +13,11 @@
   </ul>
 -->
 
-<h2>Welcome to my site.</h2>
+<h3>WELCOME!</h3>
+<div class="divider"></div>
+<div class="card-panel">
+	<p>This is very simple website written with python, django framework, and deployed on heroku.</p>
+	<p>I just put some random stuff in this site/blog...</p>
+</div>
 
-
-
-
-<p>You have visited this page {{ num_visits }}{% if num_visits == 1%} time {% else %} times {% endif %}.</p>
 {% endblock %}
