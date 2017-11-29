@@ -3,6 +3,8 @@
 
   	// materialize js initialization
     $('.button-collapse').sideNav();
+    $('.carousel').carousel();
+    $('.collapsible').collapsible();
 
     // side nav bar active highlight
     var path = window.location.pathname
@@ -21,7 +23,7 @@
   			spin = setInterval(function() { 
     			deg += 5;
     			$(".pepe").css('transform', "rotate("+deg+"deg)"); 
-      		}, 20);
+      		}, 10);
   		}
 	).mouseout(
 		function(){
@@ -31,7 +33,7 @@
 				deg += 5;
 				$(".pepe").css('transform', "rotate("+deg+"deg)");
 			}
-			}, 30);
+			}, 10);
 		}
 	);
 

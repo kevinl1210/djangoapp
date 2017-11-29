@@ -40,6 +40,7 @@ body {
  	flex-direction: column;
 }
 main {
+	padding-top: 30px;
  	flex: 1 0 auto;
 }
 
@@ -51,3 +52,12 @@ main {
 	background-color: #ffffff;
 }
 
+.top-nav {
+	height: 100px;
+	background-color: #ffa726;
+}
+
+.nav-wrapper {
+	position: relative;
+	height: 100%;
+}

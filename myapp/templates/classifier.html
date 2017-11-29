@@ -3,8 +3,36 @@
 {% block content %}
 {% load static %}
 
-<h3>My tensorflow image classifier</h3>
-<div class="divider"></div>
 
+<div class="card-panel"><p>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestT</p></div>
+<br>
+<br>
+<div style="text-align: center;"><a class="waves-effect waves-light btn">Classify</a></div>
+<br>
+<br>
+<br>
+<ul class="collapsible" data-collapsible="accordion">
+	<li>
+		<div class="collapsible-header"><i class="fa fa-picture-o" aria-hidden="true"></i>Here are some training data</div>
+      	<div class="collapsible-body">
+			<div class="carousel">
+			    <a class="carousel-item"><img src="{% static 'img/dog.0.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/dog.1.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/dog.2.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/dog.3.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/dog.4.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/cat.0.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/cat.1.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/cat.2.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/cat.3.jpg' %}"></a>
+			    <a class="carousel-item"><img src="{% static 'img/cat.4.jpg' %}"></a>
+			</div>
+		</div>
+	</li>
+</div>
 
+{% endblock %}
+
+{% block header %}
+Tensorflow Classifier
 {% endblock %}
