@@ -5,6 +5,7 @@
     $('.button-collapse').sideNav();
     $('.carousel').carousel();
     $('.collapsible').collapsible();
+    $('.modal').modal();
 
     // side nav bar active highlight
     var path = window.location.pathname
@@ -13,8 +14,8 @@
           	$(this).addClass("active");
      })
 
-     // spinning pepe!
-     var deg = 0
+    // spinning pepe!
+    var deg = 0
 	$(".pepe").mouseover(
 		function(){
 			if ( typeof rollback !== "undefined" ){
@@ -36,6 +37,10 @@
 			}, 10);
 		}
 	);
+
+	// submit image
+	
+
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

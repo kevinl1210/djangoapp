@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'^classifier/$', views.classifier, name='classifier'),
     url(r'^notes/$', views.notes, name='notes'),
+    url(r'^classify/$', views.classify, name='classify'),
 ]

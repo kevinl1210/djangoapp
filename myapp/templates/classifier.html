@@ -4,10 +4,22 @@
 {% load static %}
 
 
-<div class="card-panel"><p>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestT</p></div>
+<div class="card-panel"><p>Test</p></div>
 <br>
 <br>
-<div style="text-align: center;"><a class="waves-effect waves-light btn">Classify</a></div>
+<div style="text-align: center;"><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a></div>
+<div id="modal1" class="modal modal-fixed-footer">
+	<div class="modal-content">
+
+		<form action="{% url 'classify' %}" class="dropzone">{% csrf_token %}</form>
+		
+
+	</div>
+	<div class="modal-footer">
+		<span>{{ test }}</span>
+	  	<a href="#" type="submit" class="modal-action modal-close waves-effect waves-green btn">Ok</a>
+	</div>
+</div>
 <br>
 <br>
 <br>
