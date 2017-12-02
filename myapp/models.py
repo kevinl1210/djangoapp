@@ -45,4 +45,4 @@ class Picture(models.Model):
 	    '''
 	    return "upload/"+filename
 
-    file = models.ImageField(upload_to=get_upload_path)
+    file = models.ImageField()
