@@ -1,3 +1,4 @@
+import os, datetime
 from django.db import models
 from django.urls import reverse
 
@@ -7,6 +8,7 @@ class Genre(models.Model):
 
 	def __str__(self):
 		return self.name
+
 
 class Image(models.Model):
 	imageName = models.CharField(max_length=200, help_text="enter an image name")
@@ -26,3 +28,15 @@ class Image(models.Model):
 
 	def __str__(self):
 		return self.imageName
+
+
+class Picture(models.Model):
+    def get_upload_path(instance, filename):
+	    ext = filename.split('.')[-1]
+	    filename = "%s.%s" % (str(instance.id), ext)
+	    d = datetime.date.today()
+	    return os.path.join(
+	        'userpics', d.strftime('%Y'), d.strftime('%m'), d.strftime('%d'), filename
+	    )
+
+    file = models.ImageField(upload_to=get_upload_path)

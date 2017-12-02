@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from .models import Genre, Image
+from .models import Genre, Image, Picture
 from django.views import generic
+from django.http import HttpResponse, JsonResponse
 # from .mylib.calculation import calc
+from .forms import PhotoUploadForm
 
 # Create your views here.
 def index(request):
@@ -23,11 +25,28 @@ def classifier(request):
 	return render(request, 'classifier.html',
 		context={'num_visits': request.session['num_visits']},)
 
+'''
+def classify(request):
+	# print(request.FILES)
+	image = request.GET.get('image', None)
+	data = {'jsondata': image}
+	return JsonResponse(data)
+'''
 
 def classify(request):
-	print(request.FILES)
-	return render(request, 'classifier.html',
-		context={'num_visits': request.session['num_visits'], 'test': 'hihi'},)
+	form = PhotoUploadForm(request.POST, request.FILES or None)
+	if form.is_valid():
+		pic = request.FILES['file']
+		new_file = Picture(file=pic)
+		new_file.save()
+		'''
+		data = str(request.FILES['file']) + '-test'
+		print(data)
+		'''
+		## tensorflow classifier here !!!
+		jsondata = {'dog': 0.3, 'cat': 0.7}
+		return JsonResponse(jsondata)
+	return JsonResponse({'dog': 0, 'cat': 0 })
 
 
 def notes(request):

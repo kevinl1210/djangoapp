@@ -31,7 +31,7 @@ ul.side-nav.fixed li.logo a:hover, ul.side-nav.fixed li.logo a.active {
 .home-logo {
 	height: 100px;
 	width: 100px;
-	border:1px solid #ffffff;
+	/* border:1px solid #ffffff; */
 }
 
 body {
@@ -60,4 +60,18 @@ main {
 .nav-wrapper {
 	position: relative;
 	height: 100%;
+}
+
+.imageform {
+	min-height: 100%;
+	min-width: 100%;
+	background-image: url(../img/upload.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100px 100px;
+	border: none;
+}
+
+.dropzone .dz-preview .dz-details .dz-size {
+    margin-bottom: 0em;
 }
