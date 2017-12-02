@@ -107,5 +107,5 @@ ENV/
 *.sqlite3
 
 #user uploaded pic
-/userpics
-/upload
+userpics/
+upload/
