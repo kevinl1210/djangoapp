@@ -35,14 +35,11 @@ class Picture(models.Model):
 	    ext = filename.split('.')[-1]
 	    filename = "%s.%s" % (str(instance.id), ext)
 	    d = datetime.date.today()
-	    print(os.path.join(
-	        'userpics', d.strftime('%Y'), d.strftime('%m'), d.strftime('%d'), filename
-	    ))
 	    '''
 	    return os.path.join(
 	        'userpics', d.strftime('%Y'), d.strftime('%m'), d.strftime('%d'), filename
 	    )
 	    '''
-	    return "upload/"+filename
+	    return os.path.join("upload", filename)
 
-    file = models.ImageField()
+    file = models.ImageField(upload_to=get_upload_path)
